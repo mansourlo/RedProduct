@@ -19,13 +19,11 @@ function Register(){
 
     return(
         <div className=" flex flex-col justify-center items-center min-h-screen bg-[#2d2f33]">
-            <div className="flex text-center gap-1 mb-3">
-                <svg width="20" height="20" viewBox="0 0 32 36" xmlns="http://www.w3.org/2000/svg">
-                    <polygon 
-                        points="0,0 32,0 32,36 16,26 0,36" fill="white"
-                    />
+            <div className="flex items-center gap-2 mb-6">
+                <svg className="logo-icone" width="20" height="24" viewBox="0 0 20 24" fill="white">
+                <polygon points="0,0 20,0 20,24 10,18 0,24" />
                 </svg>
-                <span className="text-white font-bold track widest text-lg">RED PRODUCT</span>
+                <span className="text-white font-bold tracking-widest text-lg">RED PRODUCT</span>
             </div>
             <div className="w-[300px] h-fit mx-auto my-[10px] px-5 py-[15px] bg-white border border-white rounded">
                 <p className="mb-[15px] text-[1rem] text-left">Inscrivez-vous en tant que Admin</p>
@@ -40,7 +38,7 @@ function Register(){
                     <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} className="border-b-2 border-gray-300 py-1 outline-none focus:border-black transition-all duration-300"/><br/>
 
                     <label>
-                        <input type="checkbox" onChange={(e) => setAccept(e.target.value)} checked={accept} className="mr-1 align-middle cursor-pointer"/>
+                        <input type="checkbox" onChange={(e) => setAccept(e.target.checked)} checked={accept} className="mr-1 align-middle cursor-pointer"/>
                         Accepter les termes et la politique
                     </label><br/>
 
