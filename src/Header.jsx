@@ -3,8 +3,21 @@ import photo from './assets/self.png'
 import notif from './assets/notif.png'
 import logout from './assets/logout.png'
 
-function Header({pageName}){
+function Header({pageName, details}){
     const [recherche, setRecherche] = useState('');
+
+    // Texte de bienvenue dans la page Dashboard
+    const texte = () =>{
+        if(pageName === "Dashboard")
+            return(
+                <p className="text-gray-500 text-sm tracking-tight">
+                    Lorem ipsum dolor sit amet consectetur
+                </p>
+            );
+
+        return null
+    }
+
     return(
         <div className="">
             <div className="flex justify-between mx-5 my-3 border-b-1 border-gray-300">
@@ -25,8 +38,8 @@ function Header({pageName}){
                 </div>
             </div>
             <div className="mx-5 my-1">
-                <h4 className="tracking-wide text-xl">Bienvenue sur RED Product</h4>
-                <p className="text-gray-500 text-sm tracking-tight">Lorem ipsum dolor sit amet consectetur</p>
+                <h4 className="tracking-wide text-xl">{details}</h4>
+                {texte()}
             </div>
         </div>
     )
