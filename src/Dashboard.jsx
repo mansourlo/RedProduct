@@ -1,9 +1,13 @@
 import Header from './Header.jsx';
 import Menu from './Menu.jsx';
 import Card from './Card.jsx';
-import {MailOpen, Users} from 'lucide-react';
+import {Menu as MenuIcon,X, MailOpen, Users} from 'lucide-react';
+import { useState } from 'react';
 
 function Dashboard(){
+  // useState du menu: Responsive Design
+  const [menu, setMenu] = useState(false)
+
   const cards = [
     {id:1, icone:(
       <div className="bg-purple-400 text-white rounded-full p-3">
@@ -59,7 +63,7 @@ function Dashboard(){
   return(
     <div className="flex flex-row-reverse w-full">
       <div className="flex-1">
-        <Header 
+        <Header
             pageName="Dashboard"
             details="Bienvenue sur Red Product"
         />
@@ -76,9 +80,20 @@ function Dashboard(){
           </div>
         </main>
       </div>
-      <div className="bg-[#2d2f33] p-3 w-64 ">
+      <div className="bg-[#2d2f33] p-3 w-64 hidden lg:block">
         <Menu/>
       </div>
+
+      {/* Icone menu hamburger en responsive design */}
+      <button onClick={() => setMenu(!menu)} className="absolute top-1 left-3 z-[60] lg:hidden p-3 cursor-pointer transition-transform duration-200 hover:scale-110">
+        {menu ? <X size={28} /> : <MenuIcon size={28} />}
+      </button>
+
+      {menu && (
+        <div className="fixed top-12 left-0 h-screen w-60 bg-[#2d2f33] z-50 lg:hidden ">
+          <Menu/>
+        </div>
+      )}
     </div>
   )
 }

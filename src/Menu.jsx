@@ -20,7 +20,7 @@ function Menu(){
                     <Hotel/> Liste des hotels
                 </span>
             </nav>
-            <footer className="flex items-center gap-3 mt-90 border-t-1 border-gray-500 py-3">
+            <footer className="flex items-center gap-3 mt-80 border-t-1 border-gray-500 py-3">
                     <img src={photo} alt="user profile" className="w-10 h-10 rounded-full cursor-pointer"/>
                     <div>
                         <p className="text-white tracking-wide">Mansour LO</p>

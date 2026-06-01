@@ -1,10 +1,15 @@
+import { useState } from 'react';
 import Header from './Header.jsx';
 import Menu from './Menu.jsx';
 import HotelCard from './HotelCard.jsx';
-import {azalai, pullman2, lacrose, kfpalace, radisson, palmbeach, saly} from './assets/'
+import {azalai, pullman2, lacrose, kfpalace, radisson, palmbeach, saly} from './assets/';
+import {Menu as MenuIcon, X} from 'lucide-react';
 
 function Hotels(){
-    // Details page 
+  // useState du menu: Responsive Design
+  const [menu, setMenu] = useState(false)
+  
+  // Details page 
   const hotelDetail = (
     <div className="flex justify-between items-center my-3">
         <h4 className="tracking-wide text-xl">Hotels <span className="text-gray-500 text-xl tracking-tight">8</span></h4>
@@ -66,9 +71,20 @@ function Hotels(){
           </div>
         </main>
       </div>
-      <div className="bg-[#2d2f33] p-3 w-64 ">
+      <div className="bg-[#2d2f33] p-3 w-64 hidden lg:block">
         <Menu/>
       </div>
+
+      {/* Icone menu hamburger en responsive design */}
+      <button onClick={() => setMenu(!menu)} className="absolute top-1 left-3 z-[60] lg:hidden p-3 cursor-pointer transition-transform duration-200 hover:scale-110">
+        {menu ? <X size={28} /> : <MenuIcon size={28} />}
+      </button>
+
+      {menu && (
+        <div className="fixed top-12 left-0 h-screen w-60 bg-[#2d2f33] z-50 lg:hidden ">
+          <Menu/>
+        </div>
+      )}
     </div>
   )
 }

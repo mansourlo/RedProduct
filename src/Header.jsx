@@ -21,7 +21,7 @@ function Header({pageName, details}){
     return(
         <div className="">
             <div className="flex justify-between mx-5 my-3 border-b-1 border-gray-300">
-                <h2 className="text-black font-bold">{pageName}</h2>
+                <h2 className="text-white font-bold  lg:text-black">{pageName}</h2>
                 <div className="flex gap-1 items-center my-1">
                     <input type="text" name="search" id="search" value={recherche} onChange={(e) => setRecherche(e.target.value)} placeholder="🔍 Recherche" className="w-40 h-5 border border-gray-300 rounded-full py-2 px-2 outline-none focus:border-black transition-all duration-300" />
                     <div className="relative">
