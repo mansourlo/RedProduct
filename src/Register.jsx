@@ -28,14 +28,14 @@ function Register(){
             <div className="w-[300px] h-fit mx-auto my-[10px] px-5 py-[15px] bg-white border border-white rounded">
                 <p className="mb-[15px] text-[1rem] text-left">Inscrivez-vous en tant que Admin</p>
                 <div  className="flex flex-col gap-1">
-                    <label htmlFor="userName" className="text-[0.9rem] mb-[2px] text-gray-500">Nom</label>
-                    <input type="text" name="userName" id="userName" value={name} onChange={(e) => setName(e.target.value)} className="border-b-2 border-gray-300 py-1 outline-none focus:border-black transition-all duration-300"/><br/>
+                    <label htmlFor="userName" className="text-[0.9rem] text-gray-500">Nom</label>
+                    <input type="text" name="userName" id="userName" value={name} onChange={(e) => setName(e.target.value)} className="border-b-1 border-gray-300 outline-none focus:border-black transition-all duration-300"/><br/>
 
-                    <label htmlFor="email" className="text-[0.9rem] mb-[2px] text-gray-500">E-mail</label>
-                    <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} className="border-b-2 border-gray-300 py-1 outline-none focus:border-black transition-all duration-300"/><br/>
+                    <label htmlFor="email" className="text-[0.9rem] text-gray-500">E-mail</label>
+                    <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} className="border-b-1 border-gray-300  outline-none focus:border-black transition-all duration-300"/><br/>
 
-                    <label htmlFor="password" className="text-[0.9rem] mb-[2px] text-gray-500">Mot de passe</label>
-                    <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} className="border-b-2 border-gray-300 py-1 outline-none focus:border-black transition-all duration-300"/><br/>
+                    <label htmlFor="password" className="text-[0.9rem] text-gray-500">Mot de passe</label>
+                    <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} className="border-b-1 border-gray-300  outline-none focus:border-black transition-all duration-300"/><br/>
 
                     <label>
                         <input type="checkbox" onChange={(e) => setAccept(e.target.checked)} checked={accept} className="mr-1 align-middle cursor-pointer"/>
